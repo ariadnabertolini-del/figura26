@@ -2,20 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export const cocaColaData = [
-  { id: "CC 1", flag: "🇪🇸", name: "Lamine Yamal", country: "España", stock: 0, imagen: "src/assets/cocacola/1.png" },
-  { id: "CC 2", flag: "🇩🇪", name: "Joshua Kimmich", country: "Alemania", stock: 0, imagen: "src/assets/cocacola/2.png" },
-  { id: "CC 3", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", name: "Harry Kane", country: "Inglaterra", stock: 0, imagen: "src/assets/cocacola/3.png" },
-  { id: "CC 4", flag: "🇲🇽", name: "Santiago Giménez", country: "México", stock: 0, imagen: "src/assets/cocacola/4.png" },
-  { id: "CC 5", flag: "🇭🇷", name: "Joško Gvardiol", country: "Croacia", stock: 0, imagen: "src/assets/cocacola/5.png" },
-  { id: "CC 6", flag: "🇺🇾", name: "Federico Valverde", country: "Uruguay", stock: 0, imagen: "src/assets/cocacola/6.png" },
-  { id: "CC 7", flag: "🇨🇴", name: "Jefferson Lerma", country: "Colombia", stock: 0, imagen: "src/assets/cocacola/7.png" },
-  { id: "CC 8", flag: "🇪🇨", name: "Enner Valencia", country: "Ecuador", stock: 0, imagen: "src/assets/cocacola/8.png" },
-  { id: "CC 9", flag: "🇧🇷", name: "Gabriel Magalhães", country: "Brasil", stock: 0, imagen: "src/assets/cocacola/9.png" },
-  { id: "CC 10", flag: "🇳🇱", name: "Virgil van Dijk", country: "Países Bajos", stock: 0, imagen: "src/assets/cocacola/10.png" },
-  { id: "CC 11", flag: "🇨🇦", name: "Alphonso Davies", country: "Canadá", stock: 0, imagen: "src/assets/cocacola/11.png" },
-  { id: "CC 12", flag: "🇦🇷", name: "Emiliano «Dibu» Martínez", country: "Argentina", stock: 0, imagen: "src/assets/cocacola/12.png" },
-  { id: "CC 13", flag: "🇲🇽", name: "Raúl Jiménez", country: "México", stock: 0, imagen: "src/assets/cocacola/13.png" },
-  { id: "CC 14", flag: "🇦🇷", name: "Lautaro Martínez", country: "Argentina", stock: 0, imagen: "src/assets/cocacola/14.png" },
+  { id: "CC 1", flag: "🇪🇸", name: "Lamine Yamal", country: "España", stock: 0, imagen: "/cocacola/1.png" },
+  { id: "CC 2", flag: "🇩🇪", name: "Joshua Kimmich", country: "Alemania", stock: 0, imagen: "/cocacola/2.png" },
+  { id: "CC 3", flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", name: "Harry Kane", country: "Inglaterra", stock: 0, imagen: "/cocacola/3.png" },
+  { id: "CC 4", flag: "🇲🇽", name: "Santiago Giménez", country: "México", stock: 0, imagen: "/cocacola/4.png" },
+  { id: "CC 5", flag: "🇭🇷", name: "Joško Gvardiol", country: "Croacia", stock: 0, imagen: "/cocacola/5.png" },
+  { id: "CC 6", flag: "🇺🇾", name: "Federico Valverde", country: "Uruguay", stock: 0, imagen: "/cocacola/6.png" },
+  { id: "CC 7", flag: "🇨🇴", name: "Jefferson Lerma", country: "Colombia", stock: 0, imagen: "/cocacola/7.png" },
+  { id: "CC 8", flag: "🇪🇨", name: "Enner Valencia", country: "Ecuador", stock: 0, imagen: "/cocacola/8.png" },
+  { id: "CC 9", flag: "🇧🇷", name: "Gabriel Magalhães", country: "Brasil", stock: 0, imagen: "/cocacola/9.png" },
+  { id: "CC 10", flag: "🇳🇱", name: "Virgil van Dijk", country: "Países Bajos", stock: 0, imagen: "/cocacola/10.png" },
+  { id: "CC 11", flag: "🇨🇦", name: "Alphonso Davies", country: "Canadá", stock: 0, imagen: "/cocacola/11.png" },
+  { id: "CC 12", flag: "🇦🇷", name: "Emiliano «Dibu» Martínez", country: "Argentina", stock: 0, imagen: "/cocacola/12.png" },
+  { id: "CC 13", flag: "🇲🇽", name: "Raúl Jiménez", country: "México", stock: 0, imagen: "/cocacola/13.png" },
+  { id: "CC 14", flag: "🇦🇷", name: "Lautaro Martínez", country: "Argentina", stock: 0, imagen: "/cocacola/14.png" },
 ];
 
 export default function CocaCola() {

@@ -9,7 +9,7 @@ export const albumesData = [
     description: "Solo el álbum físico (tapa dura o blanda a eleccion), listo para empezar a pegar figuritas.",
     priceTag: "Álbum básico",
     stock: 0,
-    imagen: "https://tiendapanini.com.mx/media/catalog/product/0/0/005460amx_1200_1.jpg"
+    imagen: "/album/albumvacio.webp"
   },
   {
     id: "ALBUM-COMPLETO",
@@ -18,7 +18,7 @@ export const albumesData = [
     description: "Set completo con todas las figuritas del álbum, sin repetidas e incluyendo a las estrellas del torneo y las FWC completas.",
   priceTag: "Combo Completo",
   stock: 1,
-  imagen: "https://http2.mlstatic.com/D_NQ_NP_664514-MLA111046149441_042026-O.webp"
+  imagen: "/album/figuspros.webp"
   },
   {
   id: "PACK-20-FIGURITAS",
@@ -27,7 +27,7 @@ export const albumesData = [
   description: "20 figuritas sueltas seleccionadas 100% distintas entre sí, sin ninguna repetida.",
   priceTag: "Pack 20 Unidades",
   stock: 5,
-  imagen: "https://http2.mlstatic.com/D_NQ_NP_796022-MLA110305077174_052026-O.webp"
+  imagen: "/album/muchasfigus.webp"
 }
 ];
 

@@ -228,18 +228,6 @@ export default function Inicio() {
                 </li>
               ))}
             </ul>
-
-            <button 
-              onClick={() => setMostrarPrecios(false)}
-              style={{
-                width: '100%', padding: '12px', borderRadius: '8px',
-                border: 'none', background: '#6366f1',
-                color: '#fff', fontWeight: 'bold', fontSize: '1rem',
-                cursor: 'pointer'
-              }}
-            >
-              Cerrar Precios
-            </button>
           </div>
         </div>
       )}
@@ -248,7 +236,7 @@ export default function Inicio() {
       <header 
         className="hero"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(15, 23, 42, 0.92) 40%, rgba(15, 23, 42, 0.55)), url('https://i.pinimg.com/originals/70/5f/93/705f93f79f697a3ff7ac158020f8de65.webp')`,
+          backgroundImage: `linear-gradient(to right, rgba(15, 23, 42, 0.92) 40%, rgba(15, 23, 42, 0.55)), url('/inicio/fondoinicio.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat'
