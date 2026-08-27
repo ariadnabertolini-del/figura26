@@ -10,7 +10,7 @@ const GRUPOS_DATA = [
       {
         nombre: '🇲🇽 México',
         jugadores: [
-          { id: 'MEX 2', nombre: 'Luis Malagón', imagen:'src/assets/mex/luis.png' , stock: 1},
+          { id: 'MEX 2', nombre: 'Luis Malagón', imagen:'./src/assets/mex/luis.png' , stock: 1},
           { id: 'MEX 3', nombre: 'Johan Vásquez', imagen: 'src/assets/mex/johan.png', stock: 0},
           { id: 'MEX 4', nombre: 'Jorge Sánchez',imagen: 'src/assets/mex/jorge.png', stock: 0 },
           { id: 'MEX 5', nombre: 'César Montes' ,imagen: 'src/assets/mex/cesar.png', stock: 0},
