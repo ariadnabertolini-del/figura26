@@ -26,16 +26,6 @@ const PRECIOS_REFERENCIA = [
   { categoria: 'Combo 226 Figuritas Comunes sin repetir', precio: '80.000 ARS combo unico' },  
 ];
 
-// =========================================================
-// ⚙️ CONFIGURACIÓN DEL CONTADOR DE VISITAS
-// =========================================================
-// 🔴 Poné esto en `true` para resetear el contador global a 0.
-// 🟢 Volvé a ponerlo en `false` para que siga contando normalmente.
-const RESETEAR_CONTADOR_AHORA = false; 
-
-const DOMINIO_WEB = 'figura26-tienda-oficial';
-const CLAVE_CONTADOR = 'visitas_totales';
-
 export default function Inicio() {
   const [cantidades, setCantidades] = useState({});
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
@@ -45,46 +35,42 @@ export default function Inicio() {
   const TELEFONO_WHATSAPP = '5491141984267'; 
 
   // =========================================================
-  // 🌐 LÓGICA DE CONTADOR GLOBAL (Reseteable por código)
+  // 🌐 CONTADOR GLOBAL REAL EN LA NUBE (EMPIEZA EN 0 Y SUMA POR PERSONA)
   // =========================================================
   useEffect(() => {
-    // SI LA VARIABLE DE RESETEO ESTÁ EN TRUE:
-    if (RESETEAR_CONTADOR_AHORA) {
-      fetch(`https://api.countapi.xyz/set/${DOMINIO_WEB}/${CLAVE_CONTADOR}?value=0`)
-        .then((res) => res.json())
-        .then(() => {
-          setVisitas(0);
-          console.log('¡Contador reseteado a 0 exitosamente desde el código!');
-        })
-        .catch((err) => console.log('Error al resetear el contador:', err));
-      return; // Detiene la ejecución para no contar visitas mientras resetea
-    }
+    // Usamos countapi.net (Namespace único para que arranque en 0)
+    const namespace = 'figura26_tienda_oficial';
+    const key = 'visitas';
 
-    // MODO NORMAL (RESETEO EN FALSE):
-    const yaContadoEnEstaSesion = sessionStorage.getItem('visita_registrada');
+    // Verificamos si este navegador ya registró su visita en esta sesión para no inflar el número
+    const yaRegistrado = sessionStorage.getItem('visita_global_ok');
 
-    if (!yaContadoEnEstaSesion) {
-      // Visita nueva: Incrementa el contador global en el servidor
-      fetch(`https://api.countapi.xyz/hit/${DOMINIO_WEB}/${CLAVE_CONTADOR}`)
+    if (!yaRegistrado) {
+      // Si es un visitante nuevo, le pega a la API para sumar +1 globalmente
+      fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
         .then((res) => res.json())
         .then((data) => {
-          if (data && data.value !== undefined) setVisitas(data.value);
-          sessionStorage.setItem('visita_registrada', 'true');
+          if (data && data.value !== undefined) {
+            setVisitas(data.value);
+            sessionStorage.setItem('visita_global_ok', 'true');
+          }
         })
-        .catch(() => obtenerVisitasActuales());
+        .catch(() => obtenerVisitas(namespace, key));
     } else {
-      // Si el usuario recarga, solo leemos el número real global sin volver a sumar
-      obtenerVisitasActuales();
+      // Si ya visitó la página en esta sesión, solo consultamos el valor actual sin volver a sumar
+      obtenerVisitas(namespace, key);
     }
   }, []);
 
-  const obtenerVisitasActuales = () => {
-    fetch(`https://api.countapi.xyz/get/${DOMINIO_WEB}/${CLAVE_CONTADOR}`)
+  const obtenerVisitas = (ns, k) => {
+    fetch(`https://api.countapi.xyz/get/${ns}/${k}`)
       .then((res) => res.json())
       .then((data) => {
-        if (data && data.value !== undefined) setVisitas(data.value);
+        if (data && data.value !== undefined) {
+          setVisitas(data.value);
+        }
       })
-      .catch((err) => console.log('Error al obtener contador:', err));
+      .catch((err) => console.log('Error al obtener visitas:', err));
   };
 
   // Carrito local
@@ -300,7 +286,7 @@ export default function Inicio() {
         </div>
       )}
 
-      {/* HERO SECTION CON FONDO DE JUGADORES */}
+      {/* HERO SECTION */}
       <header 
         className="hero"
         style={{
@@ -445,7 +431,7 @@ export default function Inicio() {
         </div>
         <p>Tu sitio de confianza para completar el álbum del mundial.</p>
         
-        {/* CONTADOR DE VISITAS */}
+        {/* CONTADOR DE VISITAS GLOBAL */}
         <div style={{ textAlign: 'center', margin: '15px 0' }}>
           <div style={{
             display: 'inline-flex',
