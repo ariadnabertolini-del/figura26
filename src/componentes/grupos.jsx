@@ -5,7 +5,7 @@ export const gruposData = [
   {
     nombre: "Grupo A",
     equipos: [
-      { flag: "🇲🇽", code: "MEX", count: 13, name: "México", description: "Foto del equipo de México", imagen: "/grupos/1.png", stock: 0 },
+      { flag: "🇲🇽", code: "MEX", count: 13, name: "México", description: "Foto del equipo de México", imagen: "/grupos/1.png", stock: 1 },
       { flag: "🇿🇦", code: "RSA", count: 13, name: "Sudáfrica", description: "Foto del equipo de Sudáfrica", imagen: "/grupos/2.png", stock: 0 },
       { flag: "🇰🇷", code: "KOR", count: 13, name: "Corea del Sur", description: "Foto del equipo de Corea del Sur", imagen: "/grupos/3.png", stock: 0 },
       { flag: "🇨🇿", code: "CZE", count: 13, name: "Chequia", description: "Foto del equipo de Chequia", imagen: "/grupos/4.png", stock: 0 }
@@ -14,27 +14,27 @@ export const gruposData = [
   {
     nombre: "Grupo B",
     equipos: [
-      { flag: "🇨🇦", code: "CAN", count: 13, name: "Canadá", description: "Foto del equipo de Canadá", imagen: "/grupos/5.png", stock: 1 },
-      { flag: "🇨🇭", code: "SUI", count: 13, name: "Suiza", description: "Foto del equipo de Suiza", imagen: "/grupos/6.png", stock: 0 },
+      { flag: "🇨🇦", code: "CAN", count: 13, name: "Canadá", description: "Foto del equipo de Canadá", imagen: "/grupos/5.png", stock: 2 },
+      { flag: "🇨🇭", code: "SUI", count: 13, name: "Suiza", description: "Foto del equipo de Suiza", imagen: "/grupos/6.png", stock: 1 },
       { flag: "🇶🇦", code: "QAT", count: 13, name: "Catar", description: "Foto del equipo de Catar", imagen: "/grupos/7.png", stock: 0 },
-      { flag: "🇧🇦", code: "BIH", count: 13, name: "Bosnia y Herzegovina", description: "Foto del equipo de Bosnia y Herzegovina", imagen: "/grupos/8.png", stock: 0 }
+      { flag: "🇧🇦", code: "BIH", count: 13, name: "Bosnia y Herzegovina", description: "Foto del equipo de Bosnia y Herzegovina", imagen: "/grupos/8.png", stock: 1 }
     ]
   },
   {
     nombre: "Grupo C",
     equipos: [
       { flag: "🇧🇷", code: "BRA", count: 13, name: "Brasil", description: "Foto del equipo de Brasil", imagen: "/grupos/9.png", stock: 0 },
-      { flag: "🇲🇦", code: "MAR", count: 13, name: "Marruecos", description: "Foto del equipo de Marruecos", imagen: "/grupos/10.png", stock: 1 },
+      { flag: "🇲🇦", code: "MAR", count: 13, name: "Marruecos", description: "Foto del equipo de Marruecos", imagen: "/grupos/10.png", stock: 2 },
       { flag: "🇭🇹", code: "HAI", count: 13, name: "Haití", description: "Foto del equipo de Haití", imagen: "/grupos/11.png", stock: 0 },
-      { flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", code: "SCO", count: 13, name: "Escocia", description: "Foto del equipo de Escocia", imagen: "/grupos/12.png", stock: 2 }
+      { flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", code: "SCO", count: 13, name: "Escocia", description: "Foto del equipo de Escocia", imagen: "/grupos/12.png", stock: 3 }
     ]
   },
   {
     nombre: "Grupo D",
     equipos: [
-      { flag: "🇺🇸", code: "USA", count: 13, name: "Estados Unidos", description: "Foto del equipo de Estados Unidos", imagen: "/grupos/13.png", stock: 0 },
-      { flag: "🇵🇾", code: "PAR", count: 13, name: "Paraguay", description: "Foto del equipo de Paraguay", imagen: "/grupos/14.png", stock: 0 },
-      { flag: "🇦🇺", code: "AUS", count: 13, name: "Australia", description: "Foto del equipo de Australia", imagen: "/grupos/15.png", stock: 3 },
+      { flag: "🇺🇸", code: "USA", count: 13, name: "Estados Unidos", description: "Foto del equipo de Estados Unidos", imagen: "/grupos/13.png", stock: 1 },
+      { flag: "🇵🇾", code: "PAR", count: 13, name: "Paraguay", description: "Foto del equipo de Paraguay", imagen: "/grupos/14.png", stock: 1 },
+      { flag: "🇦🇺", code: "AUS", count: 13, name: "Australia", description: "Foto del equipo de Australia", imagen: "/grupos/15.png", stock: 4 },
       { flag: "🇹🇷", code: "TUR", count: 13, name: "Turquía", description: "Foto del equipo de Turquía", imagen: "/grupos/16.png", stock: 0 }
     ]
   },
@@ -42,18 +42,18 @@ export const gruposData = [
     nombre: "Grupo E",
     equipos: [
       { flag: "🇩🇪", code: "GER", count: 13, name: "Alemania", description: "Foto del equipo de Alemania", imagen: "/grupos/17.png", stock: 0 },
-      { flag: "🇨🇼", code: "CUW", count: 13, name: "Curazao", description: "Foto del equipo de Curazao", imagen: "/grupos/18.png", stock: 0 },
-      { flag: "🇨🇮", code: "CIV", count: 13, name: "Costa de Marfil", description: "Foto del equipo de Costa de Marfil", imagen: "/grupos/19.png", stock: 1 },
-      { flag: "🇪🇨", code: "ECU", count: 13, name: "Ecuador", description: "Foto del equipo de Ecuador", imagen: "/grupos/20.png", stock: 0 }
+      { flag: "🇨🇼", code: "CUW", count: 13, name: "Curazao", description: "Foto del equipo de Curazao", imagen: "/grupos/18.png", stock: 1 },
+      { flag: "🇨🇮", code: "CIV", count: 13, name: "Costa de Marfil", description: "Foto del equipo de Costa de Marfil", imagen: "/grupos/19.png", stock: 2 },
+      { flag: "🇪🇨", code: "ECU", count: 13, name: "Ecuador", description: "Foto del equipo de Ecuador", imagen: "/grupos/20.png", stock: 1 }
     ]
   },
   {
     nombre: "Grupo F",
     equipos: [
-      { flag: "🇳🇱", code: "NED", count: 13, name: "Países Bajos", description: "Foto del equipo de Países Bajos", imagen: "/grupos/21.png", stock: 0 },
-      { flag: "🇯🇵", code: "JPN", count: 13, name: "Japón", description: "Foto del equipo de Japón", imagen: "/grupos/22.png", stock: 1 },
-      { flag: "🇸🇪", code: "SWE", count: 13, name: "Suecia", description: "Foto del equipo de Suecia", imagen: "/grupos/23.png", stock: 0 },
-      { flag: "🇹🇳", code: "TUN", count: 13, name: "Túnez", description: "Foto del equipo de Túnez", imagen: "/grupos/24.png", stock: 0 }
+      { flag: "🇳🇱", code: "NED", count: 13, name: "Países Bajos", description: "Foto del equipo de Países Bajos", imagen: "/grupos/21.png", stock: 1 },
+      { flag: "🇯🇵", code: "JPN", count: 13, name: "Japón", description: "Foto del equipo de Japón", imagen: "/grupos/22.png", stock: 2 },
+      { flag: "🇸🇪", code: "SWE", count: 13, name: "Suecia", description: "Foto del equipo de Suecia", imagen: "/grupos/23.png", stock: 1 },
+      { flag: "🇹🇳", code: "TUN", count: 13, name: "Túnez", description: "Foto del equipo de Túnez", imagen: "/grupos/24.png", stock: 1 }
     ]
   },
   {
@@ -62,16 +62,16 @@ export const gruposData = [
       { flag: "🇧🇪", code: "BEL", count: 13, name: "Bélgica", description: "Foto del equipo de Bélgica", imagen: "/grupos/25.png", stock: 0 },
       { flag: "🇪🇬", code: "EGY", count: 13, name: "Egipto", description: "Foto del equipo de Egipto", imagen: "/grupos/26.png", stock: 0 },
       { flag: "🇮🇷", code: "IRN", count: 13, name: "Irán", description: "Foto del equipo de Irán", imagen: "/grupos/27.png", stock: 0 },
-      { flag: "🇳🇿", code: "NZL", count: 13, name: "Nueva Zelanda", description: "Foto del equipo de Nueva Zelanda", imagen: "/grupos/28.png", stock: 0 }
+      { flag: "🇳🇿", code: "NZL", count: 13, name: "Nueva Zelanda", description: "Foto del equipo de Nueva Zelanda", imagen: "/grupos/28.png", stock: 1 }
     ]
   },
   {
     nombre: "Grupo H",
     equipos: [
-      { flag: "🇪🇸", code: "ESP", count: 13, name: "España", description: "Foto del equipo de España", imagen: "/grupos/29.png", stock: 0 },
+      { flag: "🇪🇸", code: "ESP", count: 13, name: "España", description: "Foto del equipo de España", imagen: "/grupos/29.png", stock: 1 },
       { flag: "🇨🇻", code: "CPV", count: 13, name: "Cabo Verde", description: "Foto del equipo de Cabo Verde", imagen: "/grupos/30.png", stock: 0 },
       { flag: "🇸🇦", code: "KSA", count: 13, name: "Arabia Saudita", description: "Foto del equipo de Arabia Saudita", imagen: "/grupos/31.png", stock: 0 },
-      { flag: "🇺🇾", code: "URU", count: 13, name: "Uruguay", description: "Foto del equipo de Uruguay", imagen: "/grupos/32.png", stock: 0 }
+      { flag: "🇺🇾", code: "URU", count: 13, name: "Uruguay", description: "Foto del equipo de Uruguay", imagen: "/grupos/32.png", stock: 1 }
     ]
   },
   {
@@ -79,25 +79,25 @@ export const gruposData = [
     equipos: [
       { flag: "🇫🇷", code: "FRA", count: 13, name: "Francia", description: "Foto del equipo de Francia", imagen: "/grupos/33.png", stock: 0 },
       { flag: "🇸🇳", code: "SEN", count: 13, name: "Senegal", description: "Foto del equipo de Senegal", imagen: "/grupos/34.png", stock: 0 },
-      { flag: "🇮🇶", code: "IRQ", count: 13, name: "Irak", description: "Foto del equipo de Irak", imagen: "/grupos/35.png", stock: 2 },
-      { flag: "🇳🇴", code: "NOR", count: 13, name: "Noruega", description: "Foto del equipo de Noruega", imagen: "/grupos/36.png", stock: 1 }
+      { flag: "🇮🇶", code: "IRQ", count: 13, name: "Irak", description: "Foto del equipo de Irak", imagen: "/grupos/35.png", stock: 3 },
+      { flag: "🇳🇴", code: "NOR", count: 13, name: "Noruega", description: "Foto del equipo de Noruega", imagen: "/grupos/36.png", stock: 2 }
     ]
   },
   {
     nombre: "Grupo J",
     equipos: [
-      { flag: "🇦🇷", code: "ARG", count: 13, name: "Argentina", description: "Foto del equipo de Argentina", imagen: "/grupos/37.png", stock: 0 },
-      { flag: "🇩🇿", code: "ALG", count: 13, name: "Argelia", description: "Foto del equipo de Argelia", imagen: "/grupos/38.png", stock: 2 },
+      { flag: "🇦🇷", code: "ARG", count: 13, name: "Argentina", description: "Foto del equipo de Argentina", imagen: "/grupos/37.png", stock: 1 },
+      { flag: "🇩🇿", code: "ALG", count: 13, name: "Argelia", description: "Foto del equipo de Argelia", imagen: "/grupos/38.png", stock: 3 },
       { flag: "🇦🇹", code: "AUT", count: 13, name: "Austria", description: "Foto del equipo de Austria", imagen: "/grupos/39.png", stock: 0 },
-      { flag: "🇯🇴", code: "JOR", count: 13, name: "Jordania", description: "Foto del equipo de Jordania", imagen: "/grupos/40.png", stock: 0 }
+      { flag: "🇯🇴", code: "JOR", count: 13, name: "Jordania", description: "Foto del equipo de Jordania", imagen: "/grupos/40.png", stock: 1 }
     ]
   },
   {
     nombre: "Grupo K",
     equipos: [
-      { flag: "🇵🇹", code: "POR", count: 13, name: "Portugal", description: "Foto del equipo de Portugal", imagen: "/grupos/41.png", stock: 0 },
-      { flag: "🇨🇩", code: "COD", count: 13, name: "RD Congo", description: "Foto del equipo de RD Congo", imagen: "/grupos/42.png", stock: 1 },
-      { flag: "🇺🇿", code: "UZB", count: 13, name: "Uzbekistán", description: "Foto del equipo de Uzbekistán", imagen: "/grupos/43.png", stock: 1 },
+      { flag: "🇵🇹", code: "POR", count: 13, name: "Portugal", description: "Foto del equipo de Portugal", imagen: "/grupos/41.png", stock: 1 },
+      { flag: "🇨🇩", code: "COD", count: 13, name: "RD Congo", description: "Foto del equipo de RD Congo", imagen: "/grupos/42.png", stock: 2 },
+      { flag: "🇺🇿", code: "UZB", count: 13, name: "Uzbekistán", description: "Foto del equipo de Uzbekistán", imagen: "/grupos/43.png", stock: 2 },
       { flag: "🇨🇴", code: "COL", count: 13, name: "Colombia", description: "Foto del equipo de Colombia", imagen: "/grupos/44.png", stock: 0 }
     ]
   },
@@ -106,7 +106,7 @@ export const gruposData = [
     equipos: [
       { flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", code: "ENG", count: 13, name: "Inglaterra", description: "Foto del equipo de Inglaterra", imagen: "/grupos/45.png", stock: 0 },
       { flag: "🇭🇷", code: "CRO", count: 13, name: "Croacia", description: "Foto del equipo de Croacia", imagen: "/grupos/46.png", stock: 0 },
-      { flag: "🇬🇭", code: "GHA", count: 13, name: "Ghana", description: "Foto del equipo de Ghana", imagen: "/grupos/47.png", stock: 2 },
+      { flag: "🇬🇭", code: "GHA", count: 13, name: "Ghana", description: "Foto del equipo de Ghana", imagen: "/grupos/47.png", stock: 3 },
       { flag: "🇵🇦", code: "PAN", count: 13, name: "Panamá", description: "Foto del equipo de Panamá", imagen: "/grupos/48.png", stock: 0 }
     ]
   }

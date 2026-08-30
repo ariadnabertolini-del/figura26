@@ -8,7 +8,7 @@ import Grupos from "./componentes/grupos.jsx";
 import Escudos from "./componentes/escudos.jsx";
 import CocaCola from "./componentes/cocacola.jsx"; // Importamos CocaCola
 import EspecialesFWC from "./componentes/fwc.jsx"; // Importamos FWC
-import ProductosAlbum from "./componentes/album.jsx";
+
 
 import "./index.css";
 
@@ -22,7 +22,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/escudos" element={<Escudos />} />
         <Route path="/cocacola" element={<CocaCola />} />
         <Route path="/fwc" element={<EspecialesFWC />} />
-        <Route path="/album" element={<ProductosAlbum />} />
+        
       </Routes>
     </BrowserRouter>
   </StrictMode>

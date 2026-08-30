@@ -3,22 +3,51 @@ import { Link } from 'react-router-dom';
 import './App.css';
 
 const PRECIOS_REFERENCIA = [
-  { categoria: 'Jugadores Comunes', precio: '500 ARS c/u' },
-  { categoria: 'Fotos Grupales / Equipos', precio: '2.000 ARS c/u' },
-  { categoria: 'Escudos Metalizados', precio: '2.000 ARS c/u' },
-  { categoria: 'Especiales / Coca-Cola', precio: 'CONSULTAR c/u' },
-  { categoria: 'Sección FWC', precio: '10.000 ARS c/u' },
-  { categoria: 'Álbum Vacío', precio: 'CONSULTAR' },
-  { categoria: 'Pack de 750  ', precio: 'CONSULTAR' },
-  { categoria: 'Pack de 20  ', precio: 'CONSULTAR' },
+  { categoria: 'FWC 00 / FWC 14 / FWC 19', precio: '10.000 ARS c/u' },
+  { categoria: 'FWC 1 al 8', precio: '5.000 ARS c/u' },
+  { categoria: 'FWC 9 al 13', precio: '5.000 ARS c/u' },
+  { categoria: 'FWC 15 al 18', precio: '5.000 ARS c/u' },
+  { categoria: 'Lionel Messi (ARG 17)', precio: '25.000 ARS c/u' },
+  { categoria: 'Lamine Yamal (ESP 15)', precio: '7.000 ARS c/u' },
+  { categoria: 'Cristiano Ronaldo (POR 15)', precio: '15.000 ARS c/u' },
+  { categoria: 'Kylian Mbappé (FRA 20)', precio: '10.000 ARS c/u' },
+  { categoria: 'Jude Bellingham (ENG 11)', precio: '3.000 ARS c/u' },
+  { categoria: 'Harry Kane (ENG 18)', precio: '3.000 ARS c/u' },
+  { categoria: 'Erling Haaland (NOR 15)', precio: '5.000 ARS c/u' },
+  { categoria: 'Luka Modrić (CRO 9)', precio: '3.000 ARS c/u' },
+  { categoria: 'Vozinha (CPV 2)', precio: '3.000 ARS c/u' },
+  { categoria: 'Virgil van Dijk (NED 3)', precio: '3.000 ARS c/u' },
+  { categoria: 'Joshua Kimmich (GER 10)', precio: '3.000 ARS c/u' },
+  { categoria: 'Jamal Musiala (GER 15)', precio: '3.000 ARS c/u' },
+  { categoria: 'Escudos', precio: '2.000 ARS c/u' },    
+  { categoria: 'Formaciones', precio: '2.000 ARS c/u' }, 
+  { categoria: 'Figuritas Comunes', precio: '500 ARS c/u' }, 
+  { categoria: 'Figuritas CocaCola', precio: 'Sin stock' }, 
+  { categoria: 'Combo 226 Figuritas Comunes sin repetir', precio: '80.000 ARS combo unico' },  
 ];
 
 export default function Inicio() {
   const [cantidades, setCantidades] = useState({});
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
   const [mostrarPrecios, setMostrarPrecios] = useState(false);
+  const [visitas, setVisitas] = useState(null);
 
   const TELEFONO_WHATSAPP = '5491141984267'; 
+
+  // Carga e incremento del contador de visitas
+  useEffect(() => {
+    const NAMESPACE = 'figura26-tienda-oficial';
+    const KEY = 'visitas';
+
+    fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${KEY}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.value) {
+          setVisitas(data.value);
+        }
+      })
+      .catch((err) => console.error('Error al obtener visitas:', err));
+  }, []);
 
   useEffect(() => {
     const guardado = localStorage.getItem('mi_carrito');
@@ -228,6 +257,8 @@ export default function Inicio() {
                 </li>
               ))}
             </ul>
+
+           
           </div>
         </div>
       )}
@@ -236,7 +267,7 @@ export default function Inicio() {
       <header 
         className="hero"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(15, 23, 42, 0.92) 40%, rgba(15, 23, 42, 0.55)), url('/inicio/fondoinicio.webp')`,
+          backgroundImage: `linear-gradient(to right, rgba(15, 23, 42, 0.92) 40%, rgba(15, 23, 42, 0.55)), url('https://i.pinimg.com/originals/70/5f/93/705f93f79f697a3ff7ac158020f8de65.webp')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat'
@@ -314,22 +345,32 @@ export default function Inicio() {
           <div className="collection-card">
             <span className="card-number">05</span>
             <div className="card-icon">🌎</div>
-            <h3>HISTORIA Y SEDES</h3>
-            <p>Estadios, mascota y sedes FIFA.</p>
+            <h3>HISTORIA, PAISES Y ESPECIALES</h3>
+            <p>Balon, mascota, paises e historia de la FIFA.</p>
             <Link to="/fwc">
               <button>VER SECCIÓN FWC →</button>
             </Link>
           </div>
-
+          
           <div className="collection-card">
             <span className="card-number">06</span>
-            <div className="card-icon">📖</div>
-            <h3>ÁLBUM COMPLETO Y PACKS</h3>
-            <p>Vista previa hoja por hoja, packs de figuritas por cantidad .</p>
-            <Link to="/album">
-              <button>VER ÁLBUM →</button>
-            </Link>
+            <div className="card-icon">🃏</div>
+            <h3>COMBO 226 FIGURITAS</h3>
+            <p>Comunes sin repetir — Combo único.</p>
+            <span className="card-price">80.000 ARS</span>
+            <button 
+              onClick={() => {
+                const telefono = '5491141984267';
+                const mensaje = encodeURIComponent(
+                  '¡Hola! Quisiera consultar disponibilidad para comprar el "COMBO 226 FIGURITAS" (Comunes sin repetir - $80.000 ARS). ¿Cómo coordinamos el pago y envío?'
+                );
+                window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
+              }}
+            >
+              COMPRAR POR WHATSAPP →
+            </button>
           </div>
+          
         </div>
       </section>
 
@@ -368,6 +409,30 @@ export default function Inicio() {
           FIGURA <span>26</span>
         </div>
         <p>Tu sitio de confianza para completar el álbum del mundial.</p>
+        
+        {/* CONTADOR DE VISITAS */}
+        <div style={{
+          fontSize: '0.85rem',
+          color: '#94a3b8',
+          margin: '12px 0',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '6px'
+        }}>
+          <span>👁️ Visitas totales:</span>
+          <span style={{
+            fontWeight: 'bold',
+            color: '#10b981',
+            backgroundColor: '#0f172a',
+            padding: '2px 8px',
+            borderRadius: '4px',
+            border: '1px solid #334155'
+          }}>
+            {visitas !== null ? visitas.toLocaleString() : '...'}
+          </span>
+        </div>
+
         <small>© 2026 FWC Collection. Todos los derechos reservados.</small>
       </footer>
     </div>

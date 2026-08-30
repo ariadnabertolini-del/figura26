@@ -5,26 +5,26 @@ export const escudosData = [
   {
     nombre: "Grupo A",
     escudos: [
-      { flag: "🇲🇽", code: "MEX", id: "MEX 1", name: "Escudo de México", imagen: "/escudos/1.png", stock: 0 },
-      { flag: "🇿🇦", code: "RSA", id: "RSA 1", name: "Escudo de Sudáfrica", imagen: "/escudos/2.png", stock: 0 },
+      { flag: "🇲🇽", code: "MEX", id: "MEX 1", name: "Escudo de México", imagen: "/escudos/1.png", stock: 1 },
+      { flag: "🇿🇦", code: "RSA", id: "RSA 1", name: "Escudo de Sudáfrica", imagen: "/escudos/2.png", stock: 1 },
       { flag: "🇰🇷", code: "KOR", id: "KOR 1", name: "Escudo de Corea del Sur", imagen: "/escudos/3.png", stock: 0 },
-      { flag: "🇨🇿", code: "CZE", id: "CZE 1", name: "Escudo de Chequia", imagen: "/escudos/4.png", stock: 1 }
+      { flag: "🇨🇿", code: "CZE", id: "CZE 1", name: "Escudo de Chequia", imagen: "/escudos/4.png", stock: 2 }
     ]
   },
   {
     nombre: "Grupo B",
     escudos: [
       { flag: "🇨🇦", code: "CAN", id: "CAN 1", name: "Escudo de Canadá", imagen: "/escudos/5.png", stock: 0 },
-      { flag: "🇨🇭", code: "SUI", id: "SUI 1", name: "Escudo de Suiza", imagen: "/escudos/6.png", stock: 0 },
-      { flag: "🇶🇦", code: "QAT", id: "QAT 1", name: "Escudo de Catar", imagen: "/escudos/7.png", stock: 0 },
-      { flag: "🇧🇦", code: "BIH", id: "BIH 1", name: "Escudo de Bosnia y Herzegovina", imagen: "/escudos/8.png", stock: 0 }
+      { flag: "🇨🇭", code: "SUI", id: "SUI 1", name: "Escudo de Suiza", imagen: "/escudos/6.png", stock: 1 },
+      { flag: "🇶🇦", code: "QAT", id: "QAT 1", name: "Escudo de Catar", imagen: "/escudos/7.png", stock: 1 },
+      { flag: "🇧🇦", code: "BIH", id: "BIH 1", name: "Escudo de Bosnia y Herzegovina", imagen: "/escudos/8.png", stock: 1 }
     ]
   },
   {
     nombre: "Grupo C",
     escudos: [
       { flag: "🇧🇷", code: "BRA", id: "BRA 1", name: "Escudo de Brasil", imagen: "/escudos/9.png", stock: 0 },
-      { flag: "🇲🇦", code: "MAR", id: "MAR 1", name: "Escudo de Marruecos", imagen: "/escudos/10.png", stock: 1 },
+      { flag: "🇲🇦", code: "MAR", id: "MAR 1", name: "Escudo de Marruecos", imagen: "/escudos/10.png", stock: 2 },
       { flag: "🇭🇹", code: "HAI", id: "HAI 1", name: "Escudo de Haití", imagen: "/escudos/11.png", stock: 0 },
       { flag: "🏴󠁧󠁢󠁳󠁣󠁴󠁿", code: "SCO", id: "SCO 1", name: "Escudo de Escocia", imagen: "/escudos/12.png", stock: 0 }
     ]
@@ -32,17 +32,17 @@ export const escudosData = [
   {
     nombre: "Grupo D",
     escudos: [
-      { flag: "🇺🇸", code: "USA", id: "USA 1", name: "Escudo de Estados Unidos", imagen: "/escudos/13.png", stock: 0 },
-      { flag: "🇵🇾", code: "PAR", id: "PAR 1", name: "Escudo de Paraguay", imagen: "/escudos/14.png", stock: 1 },
+      { flag: "🇺🇸", code: "USA", id: "USA 1", name: "Escudo de Estados Unidos", imagen: "/escudos/13.png", stock: 1 },
+      { flag: "🇵🇾", code: "PAR", id: "PAR 1", name: "Escudo de Paraguay", imagen: "/escudos/14.png", stock: 2 },
       { flag: "🇦🇺", code: "AUS", id: "AUS 1", name: "Escudo de Australia", imagen: "/escudos/15.png", stock: 0 },
-      { flag: "🇹🇷", code: "TUR", id: "TUR 1", name: "Escudo de Turquía", imagen: "/escudos/16.png", stock: 0 }
+      { flag: "🇹🇷", code: "TUR", id: "TUR 1", name: "Escudo de Turquía", imagen: "/escudos/16.png", stock: 1 }
     ]
   },
   {
     nombre: "Grupo E",
     escudos: [
-      { flag: "🇩🇪", code: "GER", id: "GER 1", name: "Escudo de Alemania", imagen: "/escudos/17.png", stock: 0 },
-      { flag: "🇨🇼", code: "CUW", id: "CUW 1", name: "Escudo de Curazao", imagen: "/escudos/18.png", stock: 0 },
+      { flag: "🇩🇪", code: "GER", id: "GER 1", name: "Escudo de Alemania", imagen: "/escudos/17.png", stock: 1 },
+      { flag: "🇨🇼", code: "CUW", id: "CUW 1", name: "Escudo de Curazao", imagen: "/escudos/18.png", stock: 1 },
       { flag: "🇨🇮", code: "CIV", id: "CIV 1", name: "Escudo de Costa de Marfil", imagen: "/escudos/19.png", stock: 2 },
       { flag: "🇪🇨", code: "ECU", id: "ECU 1", name: "Escudo de Ecuador", imagen: "/escudos/20.png", stock: 0 }
     ]
@@ -50,25 +50,25 @@ export const escudosData = [
   {
     nombre: "Grupo F",
     escudos: [
-      { flag: "🇳🇱", code: "NED", id: "NED 1", name: "Escudo de Países Bajos", imagen: "/escudos/21.png", stock: 1 },
+      { flag: "🇳🇱", code: "NED", id: "NED 1", name: "Escudo de Países Bajos", imagen: "/escudos/21.png", stock: 2 },
       { flag: "🇯🇵", code: "JPN", id: "JPN 1", name: "Escudo de Japón", imagen: "/escudos/22.png", stock: 0 },
-      { flag: "🇸🇪", code: "SWE", id: "SWE 1", name: "Escudo de Suecia", imagen: "/escudos/23.png", stock: 1 },
+      { flag: "🇸🇪", code: "SWE", id: "SWE 1", name: "Escudo de Suecia", imagen: "/escudos/23.png", stock: 2 },
       { flag: "🇹🇳", code: "TUN", id: "TUN 1", name: "Escudo de Túnez", imagen: "/escudos/24.png", stock: 0 }
     ]
   },
   {
     nombre: "Grupo G",
     escudos: [
-      { flag: "🇧🇪", code: "BEL", id: "BEL 1", name: "Escudo de Bélgica", imagen: "/escudos/25.png", stock: 2 },
+      { flag: "🇧🇪", code: "BEL", id: "BEL 1", name: "Escudo de Bélgica", imagen: "/escudos/25.png", stock: 3 },
       { flag: "🇪🇬", code: "EGY", id: "EGY 1", name: "Escudo de Egipto", imagen: "/escudos/26.png", stock: 0 },
-      { flag: "🇮🇷", code: "IRN", id: "IRN 1", name: "Escudo de Irán", imagen: "/escudos/27.png", stock: 0 },
+      { flag: "🇮🇷", code: "IRN", id: "IRN 1", name: "Escudo de Irán", imagen: "/escudos/27.png", stock: 1 },
       { flag: "🇳🇿", code: "NZL", id: "NZL 1", name: "Escudo de Nueva Zelanda", imagen: "/escudos/28.png", stock: 0 }
     ]
   },
   {
     nombre: "Grupo H",
     escudos: [
-      { flag: "🇪🇸", code: "ESP", id: "ESP 1", name: "Escudo de España", imagen: "/escudos/29.png", stock: 0 },
+      { flag: "🇪🇸", code: "ESP", id: "ESP 1", name: "Escudo de España", imagen: "/escudos/29.png", stock: 1 },
       { flag: "🇨🇻", code: "CPV", id: "CPV 1", name: "Escudo de Cabo Verde", imagen: "/escudos/30.png", stock: 0 },
       { flag: "🇸🇦", code: "KSA", id: "KSA 1", name: "Escudo de Arabia Saudita", imagen: "/escudos/31.png", stock: 0 },
       { flag: "🇺🇾", code: "URU", id: "URU 1", name: "Escudo de Uruguay", imagen: "/escudos/32.png", stock: 0 }
@@ -77,37 +77,37 @@ export const escudosData = [
   {
     nombre: "Grupo I",
     escudos: [
-      { flag: "🇫🇷", code: "FRA", id: "FRA 1", name: "Escudo de Francia", imagen: "/escudos/33.png", stock: 0 },
-      { flag: "🇸🇳", code: "SEN", id: "SEN 1", name: "Escudo de Senegal", imagen: "/escudos/34.png", stock: 2 },
-      { flag: "🇮🇶", code: "IRQ", id: "IRQ 1", name: "Escudo de Irak", imagen: "/escudos/35.png", stock: 2 },
-      { flag: "🇳🇴", code: "NOR", id: "NOR 1", name: "Escudo de Noruega", imagen: "/escudos/36.png", stock: 0 }
+      { flag: "🇫🇷", code: "FRA", id: "FRA 1", name: "Escudo de Francia", imagen: "/escudos/33.png", stock: 1 },
+      { flag: "🇸🇳", code: "SEN", id: "SEN 1", name: "Escudo de Senegal", imagen: "/escudos/34.png", stock: 3 },
+      { flag: "🇮🇶", code: "IRQ", id: "IRQ 1", name: "Escudo de Irak", imagen: "/escudos/35.png", stock: 3 },
+      { flag: "🇳🇴", code: "NOR", id: "NOR 1", name: "Escudo de Noruega", imagen: "/escudos/36.png", stock: 1 }
     ]
   },
   {
     nombre: "Grupo J",
     escudos: [
       { flag: "🇦🇷", code: "ARG", id: "ARG 1", name: "Escudo de Argentina", imagen: "/escudos/37.png", stock: 0 },
-      { flag: "🇩🇿", code: "ALG", id: "ALG 1", name: "Escudo de Argelia", imagen: "/escudos/38.png", stock: 0 },
-      { flag: "🇦🇹", code: "AUT", id: "AUT 1", name: "Escudo de Austria", imagen: "/escudos/39.png", stock: 1 },
+      { flag: "🇩🇿", code: "ALG", id: "ALG 1", name: "Escudo de Argelia", imagen: "/escudos/38.png", stock: 1 },
+      { flag: "🇦🇹", code: "AUT", id: "AUT 1", name: "Escudo de Austria", imagen: "/escudos/39.png", stock: 2 },
       { flag: "🇯🇴", code: "JOR", id: "JOR 1", name: "Escudo de Jordania", imagen: "/escudos/40.png", stock: 0 }
     ]
   },
   {
     nombre: "Grupo K",
     escudos: [
-      { flag: "🇵🇹", code: "POR", id: "POR 1", name: "Escudo de Portugal", imagen: "/escudos/41.png", stock: 1 },
-      { flag: "🇨🇩", code: "COD", id: "COD 1", name: "Escudo de RD Congo", imagen: "/escudos/42.png", stock: 0 },
-      { flag: "🇺🇿", code: "UZB", id: "UZB 1", name: "Escudo de Uzbekistán", imagen: "/escudos/43.png", stock: 1 },
-      { flag: "🇨🇴", code: "COL", id: "COL 1", name: "Escudo de Colombia", imagen: "/escudos/44.png", stock: 0 }
+      { flag: "🇵🇹", code: "POR", id: "POR 1", name: "Escudo de Portugal", imagen: "/escudos/41.png", stock: 2 },
+      { flag: "🇨🇩", code: "COD", id: "COD 1", name: "Escudo de RD Congo", imagen: "/escudos/42.png", stock: 1 },
+      { flag: "🇺🇿", code: "UZB", id: "UZB 1", name: "Escudo de Uzbekistán", imagen: "/escudos/43.png", stock: 2 },
+      { flag: "🇨🇴", code: "COL", id: "COL 1", name: "Escudo de Colombia", imagen: "/escudos/44.png", stock: 1 }
     ]
   },
   {
     nombre: "Grupo L",
     escudos: [
       { flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", code: "ENG", id: "ENG 1", name: "Escudo de Inglaterra", imagen: "/escudos/45.png", stock: 0 },
-      { flag: "🇭🇷", code: "CRO", id: "CRO 1", name: "Escudo de Croacia", imagen: "/escudos/46.png", stock: 0 },
-      { flag: "🇬🇭", code: "GHA", id: "GHA 1", name: "Escudo de Ghana", imagen: "/escudos/47.png", stock: 0 },
-      { flag: "🇵🇦", code: "PAN", id: "PAN 1", name: "Escudo de Panamá", imagen: "/escudos/48.png", stock: 1 }
+      { flag: "🇭🇷", code: "CRO", id: "CRO 1", name: "Escudo de Croacia", imagen: "/escudos/46.png", stock: 1 },
+      { flag: "🇬🇭", code: "GHA", id: "GHA 1", name: "Escudo de Ghana", imagen: "/escudos/47.png", stock: 1 },
+      { flag: "🇵🇦", code: "PAN", id: "PAN 1", name: "Escudo de Panamá", imagen: "/escudos/48.png", stock: 2 }
     ]
   }
 ];

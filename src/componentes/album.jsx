@@ -15,20 +15,12 @@ export const albumesData = [
     id: "ALBUM-COMPLETO",
     icon: "📦",
     name: "Pack de 750 figuritas sin repetir",
-    description: "Set completo con todas las figuritas del álbum, sin repetidas e incluyendo a las estrellas del torneo y las FWC completas.",
-  priceTag: "Combo Completo",
+    description: "Set de 750 figuritas, sin repetir e incluyendo a las estrellas del torneo y las FWC.",
+  priceTag: "Pack",
   stock: 1,
   imagen: "/album/figuspros.webp"
   },
-  {
-  id: "PACK-20-FIGURITAS",
-  icon: "🃏",
-  name: "Lote 20 Figuritas Sin Repetir",
-  description: "20 figuritas sueltas seleccionadas 100% distintas entre sí, sin ninguna repetida.",
-  priceTag: "Pack 20 Unidades",
-  stock: 5,
-  imagen: "/album/muchasfigus.webp"
-}
+ 
 ];
 
 export default function ProductosAlbum() {
