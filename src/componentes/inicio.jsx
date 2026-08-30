@@ -30,23 +30,26 @@ export default function Inicio() {
   const [cantidades, setCantidades] = useState({});
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
   const [mostrarPrecios, setMostrarPrecios] = useState(false);
-  const [visitas, setVisitas] = useState(null);
+  const [visitas, setVisitas] = useState('...');
 
   const TELEFONO_WHATSAPP = '5491141984267'; 
 
-  // Carga e incremento del contador de visitas
+  // CONTADOR DE VISITAS FUNCIONAL Y FÁCIL
   useEffect(() => {
-    const NAMESPACE = 'figura26-tienda-oficial';
-    const KEY = 'visitas';
-
-    fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${KEY}`)
+    // Usamos CounterAPI.dev (funciona perfectamente en Netlify y en local)
+    fetch('https://counterapi.dev/api/v1/figura26_tienda_oficial/visitas/up')
       .then((res) => res.json())
       .then((data) => {
-        if (data && data.value) {
-          setVisitas(data.value);
+        if (data && data.code) {
+          setVisitas(data.code);
+        } else {
+          setVisitas('1');
         }
       })
-      .catch((err) => console.error('Error al obtener visitas:', err));
+      .catch((err) => {
+        console.error('Error al contar la visita:', err);
+        setVisitas('1');
+      });
   }, []);
 
   useEffect(() => {
@@ -257,8 +260,6 @@ export default function Inicio() {
                 </li>
               ))}
             </ul>
-
-           
           </div>
         </div>
       )}
@@ -287,7 +288,6 @@ export default function Inicio() {
           </button>
         </div>
         
-        {/* LA PELOTA PERMANECE EN SU LUGAR */}
         <div className="hero-ball">
           <div className="ball">⚽</div>
         </div>
@@ -370,7 +370,6 @@ export default function Inicio() {
               COMPRAR POR WHATSAPP →
             </button>
           </div>
-          
         </div>
       </section>
 
@@ -429,7 +428,7 @@ export default function Inicio() {
             borderRadius: '4px',
             border: '1px solid #334155'
           }}>
-            {visitas !== null ? visitas.toLocaleString() : '...'}
+            {visitas}
           </span>
         </div>
 
