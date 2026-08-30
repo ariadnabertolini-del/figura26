@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 
@@ -26,12 +26,50 @@ const PRECIOS_REFERENCIA = [
   { categoria: 'Combo 226 Figuritas Comunes sin repetir', precio: '80.000 ARS combo unico' },  
 ];
 
+// =========================================================================
+// ⚙️ CONTROL MANUAL DEL CONTADOR DESDE EL CÓDIGO
+// =========================================================================
+// Cambiá esta variable a `true` si querés forzar un reseteo desde el código:
+const FORZAR_RESETEO_DESDE_CODIGO = false; 
+
+// Valor al que se reseteará cuando la opción de arriba esté en `true` (por defecto 0):
+const VALOR_RESETEO = 0; 
+// =========================================================================
+
 export default function Inicio() {
   const [cantidades, setCantidades] = useState({});
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
   const [mostrarPrecios, setMostrarPrecios] = useState(false);
+  const [visitas, setVisitas] = useState(0);
 
   const TELEFONO_WHATSAPP = '5491141984267'; 
+  const LIMITE_MAXIMO = 999999;
+  
+  const ejecutado = useRef(false);
+
+  // LÓGICA DE VISITAS CONTROLADA DESDE EL CÓDIGO
+  useEffect(() => {
+    if (!ejecutado.current) {
+      ejecutado.current = true;
+
+      // Si activaste el reseteo manual en las constantes de arriba:
+      if (FORZAR_RESETEO_DESDE_CODIGO) {
+        localStorage.setItem('visitas_totales', VALOR_RESETEO.toString());
+        setVisitas(VALOR_RESETEO);
+        return;
+      }
+
+      // Si el reseteo está desactivado (modo normal), lee y suma +1:
+      let contadorGuardado = parseInt(localStorage.getItem('visitas_totales') || '0', 10);
+
+      if (contadorGuardado < LIMITE_MAXIMO) {
+        contadorGuardado += 1;
+        localStorage.setItem('visitas_totales', contadorGuardado.toString());
+      }
+
+      setVisitas(contadorGuardado);
+    }
+  }, []);
 
   useEffect(() => {
     const guardado = localStorage.getItem('mi_carrito');
@@ -390,27 +428,25 @@ export default function Inicio() {
         </div>
         <p>Tu sitio de confianza para completar el álbum del mundial.</p>
         
-        {/* CONTADOR SIN ENLACES NI NAVEGACIÓN */}
-        <div style={{ textAlign: 'center', margin: '12px 0', pointerEvents: 'none', cursor: 'default' }}>
-          <img 
-            src={`https://www.hitwebcounter.com/counter/counter.php?page=21517059&style=0006&nbdigits=9&type=page&reload=${Date.now()}`} 
-            alt="Count age days" 
-            decoding="async" 
-            style={{ border: 0, maxWidth: '100%', height: 'auto', display: 'inline-block' }} 
-          />
-          <br />
-          <span 
-            style={{ 
-              fontFamily: 'Arial, Helvetica, sans-serif', 
-              fontSize: '9px', 
-              color: '#6D5B77', 
-              fontWeight: 'bold',
-              marginTop: '2px',
-              display: 'inline-block'
-            }}
-          >
-            Total Visits
-          </span>
+        {/* CONTADOR DE VISITAS */}
+        <div style={{ textAlign: 'center', margin: '15px 0' }}>
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            background: '#0f172a',
+            border: '1px solid #334155',
+            padding: '6px 14px',
+            borderRadius: '20px',
+            color: '#6366f1',
+            fontWeight: 'bold',
+            fontSize: '0.9rem'
+          }}>
+            <span>👁️ Total Visits:</span>
+            <span style={{ color: '#10b981', fontSize: '1rem' }}>
+              {String(visitas).padStart(6, '0')}
+            </span>
+          </div>
         </div>
 
         <small>© 2026 FWC Collection. Todos los derechos reservados.</small>
