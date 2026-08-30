@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 
@@ -26,15 +26,15 @@ const PRECIOS_REFERENCIA = [
   { categoria: 'Combo 226 Figuritas Comunes sin repetir', precio: '80.000 ARS combo unico' },  
 ];
 
-// =========================================================================
-// ⚙️ CONTROL MANUAL DEL CONTADOR DESDE EL CÓDIGO
-// =========================================================================
-// Cambiá esta variable a `true` si querés forzar un reseteo desde el código:
-const FORZAR_RESETEO_DESDE_CODIGO = false; 
+// =========================================================
+// ⚙️ CONFIGURACIÓN DEL CONTADOR DE VISITAS
+// =========================================================
+// 🔴 Poné esto en `true` para resetear el contador global a 0.
+// 🟢 Volvé a ponerlo en `false` para que siga contando normalmente.
+const RESETEAR_CONTADOR_AHORA = false; 
 
-// Valor al que se reseteará cuando la opción de arriba esté en `true` (por defecto 0):
-const VALOR_RESETEO = 0; 
-// =========================================================================
+const DOMINIO_WEB = 'figura26-tienda-oficial';
+const CLAVE_CONTADOR = 'visitas_totales';
 
 export default function Inicio() {
   const [cantidades, setCantidades] = useState({});
@@ -43,34 +43,51 @@ export default function Inicio() {
   const [visitas, setVisitas] = useState(0);
 
   const TELEFONO_WHATSAPP = '5491141984267'; 
-  const LIMITE_MAXIMO = 999999;
-  
-  const ejecutado = useRef(false);
 
-  // LÓGICA DE VISITAS CONTROLADA DESDE EL CÓDIGO
+  // =========================================================
+  // 🌐 LÓGICA DE CONTADOR GLOBAL (Reseteable por código)
+  // =========================================================
   useEffect(() => {
-    if (!ejecutado.current) {
-      ejecutado.current = true;
+    // SI LA VARIABLE DE RESETEO ESTÁ EN TRUE:
+    if (RESETEAR_CONTADOR_AHORA) {
+      fetch(`https://api.countapi.xyz/set/${DOMINIO_WEB}/${CLAVE_CONTADOR}?value=0`)
+        .then((res) => res.json())
+        .then(() => {
+          setVisitas(0);
+          console.log('¡Contador reseteado a 0 exitosamente desde el código!');
+        })
+        .catch((err) => console.log('Error al resetear el contador:', err));
+      return; // Detiene la ejecución para no contar visitas mientras resetea
+    }
 
-      // Si activaste el reseteo manual en las constantes de arriba:
-      if (FORZAR_RESETEO_DESDE_CODIGO) {
-        localStorage.setItem('visitas_totales', VALOR_RESETEO.toString());
-        setVisitas(VALOR_RESETEO);
-        return;
-      }
+    // MODO NORMAL (RESETEO EN FALSE):
+    const yaContadoEnEstaSesion = sessionStorage.getItem('visita_registrada');
 
-      // Si el reseteo está desactivado (modo normal), lee y suma +1:
-      let contadorGuardado = parseInt(localStorage.getItem('visitas_totales') || '0', 10);
-
-      if (contadorGuardado < LIMITE_MAXIMO) {
-        contadorGuardado += 1;
-        localStorage.setItem('visitas_totales', contadorGuardado.toString());
-      }
-
-      setVisitas(contadorGuardado);
+    if (!yaContadoEnEstaSesion) {
+      // Visita nueva: Incrementa el contador global en el servidor
+      fetch(`https://api.countapi.xyz/hit/${DOMINIO_WEB}/${CLAVE_CONTADOR}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data && data.value !== undefined) setVisitas(data.value);
+          sessionStorage.setItem('visita_registrada', 'true');
+        })
+        .catch(() => obtenerVisitasActuales());
+    } else {
+      // Si el usuario recarga, solo leemos el número real global sin volver a sumar
+      obtenerVisitasActuales();
     }
   }, []);
 
+  const obtenerVisitasActuales = () => {
+    fetch(`https://api.countapi.xyz/get/${DOMINIO_WEB}/${CLAVE_CONTADOR}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && data.value !== undefined) setVisitas(data.value);
+      })
+      .catch((err) => console.log('Error al obtener contador:', err));
+  };
+
+  // Carrito local
   useEffect(() => {
     const guardado = localStorage.getItem('mi_carrito');
     if (guardado) {
