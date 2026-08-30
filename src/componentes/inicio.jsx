@@ -390,35 +390,27 @@ export default function Inicio() {
         </div>
         <p>Tu sitio de confianza para completar el álbum del mundial.</p>
         
-        {/* HITWEBCOUNTER ADAPTADO A REACT */}
-        <div style={{ textAlign: 'center', margin: '12px 0' }}>
-          <a 
-            href="https://www.hitwebcounter.com/age-calculator" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            title="Count age days"
-          >
-            <img 
-              src="https://www.hitwebcounter.com/counter/counter.php?page=21517058&style=0006&nbdigits=9&type=ip" 
-              alt="Count age days" 
-              decoding="async" 
-              style={{ border: 0, maxWidth: '100%', height: 'auto' }} 
-            />
-          </a>
+        {/* CONTADOR SIN ENLACES NI NAVEGACIÓN */}
+        <div style={{ textAlign: 'center', margin: '12px 0', pointerEvents: 'none', cursor: 'default' }}>
+          <img 
+            src={`https://www.hitwebcounter.com/counter/counter.php?page=21517059&style=0006&nbdigits=9&type=page&reload=${Date.now()}`} 
+            alt="Count age days" 
+            decoding="async" 
+            style={{ border: 0, maxWidth: '100%', height: 'auto', display: 'inline-block' }} 
+          />
           <br />
-          <a 
-            href="https://www.hitwebcounter.com/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <span 
             style={{ 
               fontFamily: 'Arial, Helvetica, sans-serif', 
               fontSize: '9px', 
               color: '#6D5B77', 
-              textDecoration: 'underline' 
+              fontWeight: 'bold',
+              marginTop: '2px',
+              display: 'inline-block'
             }}
           >
             Total Visits
-          </a>
+          </span>
         </div>
 
         <small>© 2026 FWC Collection. Todos los derechos reservados.</small>
