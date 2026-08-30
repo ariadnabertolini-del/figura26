@@ -30,31 +30,8 @@ export default function Inicio() {
   const [cantidades, setCantidades] = useState({});
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
   const [mostrarPrecios, setMostrarPrecios] = useState(false);
-  const [visitas, setVisitas] = useState(0);
 
   const TELEFONO_WHATSAPP = '5491141984267'; 
-
-  // CONTADOR DE VISITAS REAL QUE EMPIEZA DE 0 Y SIN IMÁGENES FEAS
-  useEffect(() => {
-    // Usamos el servicio de api.codetabs.com o api.counterapi.dev con una clave única totalmente nueva
-    const UNIQUE_KEY = 'figura26_tienda_v2026_oficial';
-    
-    fetch(`https://api.counterapi.dev/v1/${UNIQUE_KEY}/visitas/up`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data && typeof data.count === 'number') {
-          setVisitas(data.count);
-        } else if (data && typeof data.value === 'number') {
-          setVisitas(data.value);
-        } else {
-          setVisitas(1);
-        }
-      })
-      .catch((err) => {
-        console.error('Error cargando visitas:', err);
-        setVisitas(1);
-      });
-  }, []);
 
   useEffect(() => {
     const guardado = localStorage.getItem('mi_carrito');
@@ -268,7 +245,7 @@ export default function Inicio() {
         </div>
       )}
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION CON FONDO DE JUGADORES */}
       <header 
         className="hero"
         style={{
@@ -413,30 +390,35 @@ export default function Inicio() {
         </div>
         <p>Tu sitio de confianza para completar el álbum del mundial.</p>
         
-        {/* NUEVO DISEÑO DE CONTADOR MODERNO EN TEXTO */}
-        <div style={{
-          fontSize: '0.9rem',
-          color: '#cbd5e1',
-          margin: '14px 0',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '8px'
-        }}>
-          <span>👁️ Visitas totales:</span>
-          <span style={{
-            fontWeight: 'bold',
-            color: '#10b981',
-            backgroundColor: '#0f172a',
-            padding: '4px 12px',
-            borderRadius: '6px',
-            border: '1px solid #334155',
-            fontFamily: 'monospace',
-            letterSpacing: '1px',
-            fontSize: '1rem'
-          }}>
-            {visitas}
-          </span>
+        {/* HITWEBCOUNTER ADAPTADO A REACT */}
+        <div style={{ textAlign: 'center', margin: '12px 0' }}>
+          <a 
+            href="https://www.hitwebcounter.com/age-calculator" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            title="Count age days"
+          >
+            <img 
+              src="https://www.hitwebcounter.com/counter/counter.php?page=21517058&style=0006&nbdigits=9&type=ip" 
+              alt="Count age days" 
+              decoding="async" 
+              style={{ border: 0, maxWidth: '100%', height: 'auto' }} 
+            />
+          </a>
+          <br />
+          <a 
+            href="https://www.hitwebcounter.com/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            style={{ 
+              fontFamily: 'Arial, Helvetica, sans-serif', 
+              fontSize: '9px', 
+              color: '#6D5B77', 
+              textDecoration: 'underline' 
+            }}
+          >
+            Total Visits
+          </a>
         </div>
 
         <small>© 2026 FWC Collection. Todos los derechos reservados.</small>
