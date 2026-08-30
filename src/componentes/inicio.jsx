@@ -30,27 +30,8 @@ export default function Inicio() {
   const [cantidades, setCantidades] = useState({});
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
   const [mostrarPrecios, setMostrarPrecios] = useState(false);
-  const [visitas, setVisitas] = useState('...');
 
   const TELEFONO_WHATSAPP = '5491141984267'; 
-
-  // CONTADOR DE VISITAS FUNCIONAL Y FÁCIL
-  useEffect(() => {
-    // Usamos CounterAPI.dev (funciona perfectamente en Netlify y en local)
-    fetch('https://counterapi.dev/api/v1/figura26_tienda_oficial/visitas/up')
-      .then((res) => res.json())
-      .then((data) => {
-        if (data && data.code) {
-          setVisitas(data.code);
-        } else {
-          setVisitas('1');
-        }
-      })
-      .catch((err) => {
-        console.error('Error al contar la visita:', err);
-        setVisitas('1');
-      });
-  }, []);
 
   useEffect(() => {
     const guardado = localStorage.getItem('mi_carrito');
@@ -264,7 +245,7 @@ export default function Inicio() {
         </div>
       )}
 
-      {/* HERO SECTION CON FONDO DE JUGADORES */}
+      {/* HERO SECTION */}
       <header 
         className="hero"
         style={{
@@ -409,28 +390,24 @@ export default function Inicio() {
         </div>
         <p>Tu sitio de confianza para completar el álbum del mundial.</p>
         
-        {/* CONTADOR DE VISITAS */}
-        <div style={{
-          fontSize: '0.85rem',
-          color: '#94a3b8',
-          margin: '12px 0',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '6px'
-        }}>
-          <span>👁️ Visitas totales:</span>
-          <span style={{
-            fontWeight: 'bold',
-            color: '#10b981',
-            backgroundColor: '#0f172a',
-            padding: '2px 8px',
-            borderRadius: '4px',
-            border: '1px solid #334155'
-          }}>
-            {visitas}
-          </span>
-        </div>
+        {/* CONTADOR REAL DE VISITAS */}
+      <div style={{
+  fontSize: '0.85rem',
+  color: '#94a3b8',
+  margin: '12px 0',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '8px'
+}}>
+  <span>👁️ Visitas totales:</span>
+  <img 
+    src="https://hitwebcounter.com/counter/counter.php?page=19054000&style=0005&nbdigits=5&type=page&initCount=0" 
+    title="Visitas Reales" 
+    alt="Visitas" 
+    style={{ height: '20px', borderRadius: '4px' }}
+  />
+</div>
 
         <small>© 2026 FWC Collection. Todos los derechos reservados.</small>
       </footer>
