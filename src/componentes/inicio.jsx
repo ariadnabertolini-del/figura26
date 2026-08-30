@@ -30,48 +30,8 @@ export default function Inicio() {
   const [cantidades, setCantidades] = useState({});
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
   const [mostrarPrecios, setMostrarPrecios] = useState(false);
-  const [visitas, setVisitas] = useState(0);
 
   const TELEFONO_WHATSAPP = '5491141984267'; 
-
-  // =========================================================
-  // 🌐 CONTADOR GLOBAL REAL EN LA NUBE (EMPIEZA EN 0 Y SUMA POR PERSONA)
-  // =========================================================
-  useEffect(() => {
-    // Usamos countapi.net (Namespace único para que arranque en 0)
-    const namespace = 'figura26_tienda_oficial';
-    const key = 'visitas';
-
-    // Verificamos si este navegador ya registró su visita en esta sesión para no inflar el número
-    const yaRegistrado = sessionStorage.getItem('visita_global_ok');
-
-    if (!yaRegistrado) {
-      // Si es un visitante nuevo, le pega a la API para sumar +1 globalmente
-      fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data && data.value !== undefined) {
-            setVisitas(data.value);
-            sessionStorage.setItem('visita_global_ok', 'true');
-          }
-        })
-        .catch(() => obtenerVisitas(namespace, key));
-    } else {
-      // Si ya visitó la página en esta sesión, solo consultamos el valor actual sin volver a sumar
-      obtenerVisitas(namespace, key);
-    }
-  }, []);
-
-  const obtenerVisitas = (ns, k) => {
-    fetch(`https://api.countapi.xyz/get/${ns}/${k}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data && data.value !== undefined) {
-          setVisitas(data.value);
-        }
-      })
-      .catch((err) => console.log('Error al obtener visitas:', err));
-  };
 
   // Carrito local
   useEffect(() => {
@@ -424,36 +384,50 @@ export default function Inicio() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="footer">
-        <div className="footer-logo">
-          FIGURA <span>26</span>
-        </div>
-        <p>Tu sitio de confianza para completar el álbum del mundial.</p>
-        
-        {/* CONTADOR DE VISITAS GLOBAL */}
-        <div style={{ textAlign: 'center', margin: '15px 0' }}>
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            background: '#0f172a',
-            border: '1px solid #334155',
-            padding: '6px 14px',
-            borderRadius: '20px',
-            color: '#6366f1',
-            fontWeight: 'bold',
-            fontSize: '0.9rem'
-          }}>
-            <span>👁️ Total Visits:</span>
-            <span style={{ color: '#10b981', fontSize: '1rem' }}>
-              {String(visitas).padStart(6, '0')}
-            </span>
-          </div>
-        </div>
+     {/* FOOTER */}
+<footer className="footer">
+  <div className="footer-logo">
+    FIGURA <span>26</span>
+  </div>
 
-        <small>© 2026 FWC Collection. Todos los derechos reservados.</small>
-      </footer>
+  <p>Tu sitio de confianza para completar el álbum del mundial.</p>
+
+  {/* CONTADOR DE VISITAS GLOBAL */}
+  <div style={{ textAlign: 'center', margin: '15px 0' }}>
+    <div
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '8px',
+        background: '#0f172a',
+        border: '1px solid #334155',
+        padding: '6px 14px',
+        borderRadius: '20px',
+        color: '#6366f1',
+        fontWeight: 'bold',
+        fontSize: '0.9rem'
+      }}
+    >
+      <span>👁️ Visitas:</span>
+
+      <a
+        href="https://www.contadorvisitasgratis.com"
+        title="contador de visitas"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://counter11.optistats.ovh/private/contadorvisitasgratis.php?c=g54zu4r1t4rcb97rhgdru4xwa6mhkydp"
+          border="0"
+          title="contador de visitas"
+          alt="contador de visitas"
+        />
+      </a>
+    </div>
+  </div>
+
+  <small>© 2026 FWC Collection. Todos los derechos reservados.</small>
+</footer>
     </div>
   );
 }
