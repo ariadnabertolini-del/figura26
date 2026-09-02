@@ -7,7 +7,7 @@ const PRECIOS_REFERENCIA = [
   { categoria: 'FWC 1 al 8', precio: '5.000 ARS c/u' },
   { categoria: 'FWC 9 al 13', precio: '5.000 ARS c/u' },
   { categoria: 'FWC 15 al 18', precio: '5.000 ARS c/u' },
-  { categoria: 'Lionel Messi (ARG 17)', precio: '25.000 ARS c/u' },
+  { categoria: 'Lionel Messi (ARG 17)', precio: '35.000 ARS c/u' },
   { categoria: 'Lamine Yamal (ESP 15)', precio: '7.000 ARS c/u' },
   { categoria: 'Cristiano Ronaldo (POR 15)', precio: '15.000 ARS c/u' },
   { categoria: 'Kylian Mbappé (FRA 20)', precio: '10.000 ARS c/u' },
